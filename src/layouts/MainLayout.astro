@@ -1,0 +1,51 @@
+---
+import MainIcon from "../assets/icons/MainIcon.astro";
+---
+<script>
+  const $navTarget = document.querySelector("#navSection") as HTMLElement;
+  const $$sections = document.querySelectorAll("section[data-background='dark']");
+
+  const intersectionOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      !entry.isIntersecting ? $navTarget.classList.add("isDark") : $navTarget.classList.remove('isDark')
+    });
+  }, intersectionOptions);
+
+  $$sections.forEach((darkSection) => observer.observe(darkSection));
+</script>
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon_sorozco.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Sergio Orozco - Frontend Developer</title>
+  </head>
+  <body>
+    <!-- Menu Layout -->
+    <nav id="navSection" class="px-5 py-2 z-10 fixed top-1 transition-colors duration-300 text-white right-0 w-full flex justify-between items-center">
+      <a href="/" class="size-10">
+        <MainIcon />
+      </a>
+      <ul class="flex gap-x-3 font-semibold">
+        <li><a href="/">About</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+      </ul>
+    </nav>
+    <slot></slot>
+  </body>
+</html>
+
+<style>
+  .isDark { @apply text-slate-500; }
+  .isLigth { @apply text-white; }
+</style>
