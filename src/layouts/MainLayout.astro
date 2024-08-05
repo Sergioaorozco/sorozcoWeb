@@ -28,6 +28,9 @@ import MainIcon from "../assets/icons/MainIcon.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon_sorozco.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
     <title>Sergio Orozco - Frontend Developer</title>
   </head>
   <body>
@@ -36,7 +39,7 @@ import MainIcon from "../assets/icons/MainIcon.astro";
       <a href="/" class="size-10">
         <MainIcon />
       </a>
-      <ul class="flex gap-x-3 font-semibold">
+      <ul class="flex gap-x-3 text-xl font-semibold normal-case">
         <li><a href="/">About</a></li>
         <li><a href="/portfolio">Portfolio</a></li>
       </ul>
@@ -45,7 +48,16 @@ import MainIcon from "../assets/icons/MainIcon.astro";
   </body>
 </html>
 
-<style>
+<style is:global>
   .isDark { @apply text-slate-500; }
   .isLigth { @apply text-white; }
+  body {
+    font-family: "Barlow", sans-serif;
+  }
+  .handText {
+    font-family: "Playwrite NO", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
 </style>
