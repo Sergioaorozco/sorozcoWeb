@@ -16,7 +16,7 @@ let icons = [
 
 <MainLayout>
   <section
-    class="min-h-screen w-ful flex flex-col gap-y-6 justify-center bg-slate-800 p-2 changeW"
+    class="min-h-screen w-ful flex flex-col gap-y-6 justify-center bg-emerald-950 p-2 changeW"
     data-background="dark"
   >
   <div class="text-white px-10 w-full max-w-screen-lg mx-auto">
@@ -37,19 +37,34 @@ let icons = [
     </ul>
   </div>
   </section>
-  <section class="min-h-screen max-w-screen bg-slate-200"></section>
+  <section class="min-h-screen max-w-screen bg-slate-200 py-16">
+    <div class="wrapper">
+      <h2 class="text-5xl text-slate-600">About Me</h2>
+    </div>
+  </section>
 </MainLayout>
 
 <style>
+
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(5em);
+    }
+    to{
+      opacity: 1;
+    }
+  }
 
   @keyframes changeWidth {
     0% {
       margin-inline: 0em;
     }
-    100% {
-      margin-inline: 2em;
+    20%,100% {
+      margin-inline: 1em;
       border-bottom-left-radius: 3em;
       border-bottom-right-radius: 3em;
+      @apply bg-blue-900 duration-700;
     }
   }
 
@@ -63,11 +78,18 @@ let icons = [
     
   }
 
+  .wrapper {
+    max-inline-size: 1125px;
+    margin: 0 auto;
+    animation: reveal linear both;
+    animation-timeline: view(block);
+    animation-range: cover 10%;
+  }
+
   .changeW {
     animation: changeWidth linear both;
     animation-timeline: view(block);
     animation-range: exit 0% cover 100%;
-    view-timeline-inset: 0%;
   }
 
   .marqueeInitial {

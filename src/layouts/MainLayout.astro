@@ -35,13 +35,13 @@ import MainIcon from "../assets/icons/MainIcon.astro";
   </head>
   <body class="bg-slate-200">
     <!-- Menu Layout -->
-    <nav id="navSection" class="px-5 py-2 z-10 fixed top-1 transition-colors duration-300 text-white right-0 w-full flex justify-between items-center">
+    <nav id="navSection" class="px-6 py-2 z-10 fixed top-1 transition-colors duration-300 text-white right-0 w-full flex justify-between items-center">
       <a href="/" class="size-12 p-2 rounded-full">
         <MainIcon />
       </a>
-      <ul class="flex text-xl font-semibold normal-case">
-        <li><a class="hover:bg-slate-900 rounded-md py-3 px-4" href="/">About</a></li>
-        <li><a class="hover:bg-slate-900 rounded-md py-3 px-4" href="/portfolio">Portfolio</a></li>
+      <ul class="navLinks flex text-xl font-semibold normal-case">
+        <li><a class="hover:bg-black/40 rounded-md py-3 px-4" href="/">About</a></li>
+        <li><a class="hover:bg-black/40 rounded-md py-3 px-4" href="/portfolio">Portfolio</a></li>
       </ul>
     </nav>
     <slot></slot>
