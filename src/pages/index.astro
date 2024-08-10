@@ -16,14 +16,14 @@ let icons = [
 
 <MainLayout>
   <section
-    class="min-h-screen w-ful flex flex-col gap-y-6 justify-center bg-slate-800 p-2"
+    class="min-h-screen w-ful flex flex-col gap-y-6 justify-center bg-slate-800 p-2 changeW"
     data-background="dark"
   >
   <div class="text-white px-10 w-full max-w-screen-lg mx-auto">
     <SorozcoMain />
   </div>
   <div
-    class="py-3 flex justify-center items-center self-end gap-x-6 marqueeSection w-full px-6 max-w-screen-lg overflow-x-clip mx-auto"
+    class="py-3 md:flex justify-center items-center self-end gap-x-6 marqueeSection w-full px-6 max-w-screen-lg overflow-x-clip mx-auto hidden"
   >
     <ul class="flex gap-x-6 items-center text-white font-bold text-xl md:text-5xl will-change-transform italic">
       { icons.map(icon => (
@@ -42,6 +42,17 @@ let icons = [
 
 <style>
 
+  @keyframes changeWidth {
+    0% {
+      margin-inline: 0em;
+    }
+    100% {
+      margin-inline: 2em;
+      border-bottom-left-radius: 3em;
+      border-bottom-right-radius: 3em;
+    }
+  }
+
   @keyframes marqueeInitial {
     0% {
       transform: translateX(-1.2rem);
@@ -50,6 +61,13 @@ let icons = [
       transform: translateX(-905px);
     }
     
+  }
+
+  .changeW {
+    animation: changeWidth linear both;
+    animation-timeline: view(block);
+    animation-range: exit 0% cover 100%;
+    view-timeline-inset: 0%;
   }
 
   .marqueeInitial {
