@@ -16,7 +16,7 @@ let icons = [
 
 <MainLayout>
   <section
-    class="min-h-screen w-ful flex flex-col gap-y-6 justify-center bg-emerald-950 p-2 changeW"
+    class="min-h-screen w-ful flex flex-col gap-y-6 justify-center bg-stone-950 p-2 changeW"
     data-background="dark"
   >
   <div class="text-white px-10 w-full max-w-screen-lg mx-auto">
@@ -39,7 +39,7 @@ let icons = [
   </section>
   <section class="min-h-screen max-w-screen bg-slate-200 py-16">
     <div class="wrapper">
-      <h2 class="text-5xl text-slate-600">About Me</h2>
+      <h2 class="text-5xl text-slate-600 reveal">About Me</h2>
     </div>
   </section>
 </MainLayout>
@@ -50,8 +50,10 @@ let icons = [
     0% {
       opacity: 0;
       transform: translateY(5em);
+      font-size: 1em;
     }
     to{
+      font-size: 2em;
       opacity: 1;
     }
   }
@@ -84,6 +86,12 @@ let icons = [
     animation: reveal linear both;
     animation-timeline: view(block);
     animation-range: cover 10%;
+  }
+
+  .reveal{
+    animation: reveal linear both;
+    animation-timeline: view(block);
+    animation-range: cover 10%;   
   }
 
   .changeW {
