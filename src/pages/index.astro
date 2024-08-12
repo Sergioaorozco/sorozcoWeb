@@ -1,8 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import SorozcoMain from "../assets/icons/SorozcoType.astro"
-
-let icons = [
+let Title = [
   {name:'FrontEnd Developer', },
   {name:'•'},
   {name:'Graphic Designer'},
@@ -12,34 +11,70 @@ let icons = [
   {name:'Graphic Designer'},
   {name:'•'},
 ]
+
+let Tools = [
+  {name:'Astro', url:"/Tools/Astrologo.svg" },
+  {name:'VueJs', url:"/Tools/VueLogo.svg" },
+  {name:'Pinia', url:"/Tools/PiniaLogo.svg" },
+  {name:'Firebase', url:"/Tools/Firebase.svg" },
+  {name:'Git', url:"/Tools/GitLogo.svg" },
+  {name:'Tailwind', url:"/Tools/TailwindLogo.svg" },
+  {name:'Figma', url:"/Tools/Figma.svg" },
+]
 ---
 
 <MainLayout>
   <section
-    class="min-h-screen w-ful flex flex-col gap-y-6 justify-center bg-stone-950 p-2 changeW"
+    class="min-h-screen w-ful flex flex-col gap-y-6 justify-center items-center bg-stone-900 p-2 changeW clipBackground"
     data-background="dark"
   >
   <div class="text-white px-10 w-full max-w-screen-lg mx-auto">
     <SorozcoMain />
   </div>
-  <div
+  <p class="text-white text-3xl font-semibold italic md:hidden">Frontend Developer</p>
+  <main
     class="py-3 md:flex justify-center items-center self-end gap-x-6 marqueeSection w-full px-6 max-w-screen-lg overflow-x-clip mx-auto hidden"
   >
     <ul class="flex gap-x-6 items-center text-white font-bold text-xl md:text-5xl will-change-transform italic">
-      { icons.map(icon => (
-        <li class="marqueeInitial text-nowrap animate-ping">{icon.name}</li>
+      { Title.map(title => (
+        <li class="marqueeInitial text-nowrap animate-ping">{title.name}</li>
       ))}
     </ul>
     <ul class="flex gap-x-6 items-center text-white font-bold text-xl md:text-5xl will-change-transform italic">
-      { icons.map(icon => (
-        <li class="marqueeInitial text-nowrap animate-ping">{icon.name}</li>
+      { Title.map(title => (
+        <li class="marqueeInitial text-nowrap animate-ping">{title.name}</li>
       ))}
     </ul>
+  </main>
+  <div class="w-full absolute bottom-0 mx-auto py-9 bg-black/20">
+    <div class="flex flex-col md:flex-row gap-2 items-center justify-center md:justify-between w-10/12 mx-auto">
+      <div class="flex gap-x-2 items-center text-white">
+        <p class="text-lg">Working at: Sproutloud</p>
+      </div>
+      <div class="flex gap-x-2 items-center text-white">
+        <img src="/ColombianFlag.svg" class="size-7" alt="Image of the colombian flag">
+        <p>Based in Medellín, Colombia</p>
+      </div>
+    </div>
   </div>
   </section>
-  <section class="min-h-screen max-w-screen bg-slate-200 py-16">
-    <div class="wrapper">
-      <h2 class="text-5xl text-slate-600 reveal">About Me</h2>
+  <section class="min-h-screen max-w-screen bg-slate-200 py-8 md:py-16 px-6 pb-5 wrapper">
+    <div class="reveal flex flex-col gap-y-8">
+      <div class="lg:px-0 text-slate-600">
+        <h2 class="text-slate-600 text-6xl">About Me</h2>
+        <p class="mt-5 text-2xl md:text-3xl leading-tight text-pretty">Mid-level frontend developer crafting user-friendly, engaging experiences with VueJs and Astro. Proficient in agile methodologies (SAFe) and teamwork, I bring a strong work ethic and passion for excellence to help your team achieve its goals.</p>
+      </div>
+      <div>
+        <h2 class="text-slate-600 text-4xl">Tools</h2>
+        <ul class="mt-5 flex flex-wrap md:justify-center gap-3">
+          {Tools.map(icon => (
+            <li class="border border-slate-300 bg-white shadow-sm rounded-md px-3 py-2 flex gap-x-2 flex-grow justify-center items-center">
+              <img width="56px" class="size-14" src={icon.url} alt={`image of the ${icon.name} logo`}>
+              <p class="font-semibold text-slate-500">{icon.name}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 </MainLayout>
@@ -49,11 +84,9 @@ let icons = [
   @keyframes reveal {
     0% {
       opacity: 0;
-      transform: translateY(5em);
-      font-size: 1em;
+      transform: translateY(10em);
     }
     to{
-      font-size: 2em;
       opacity: 1;
     }
   }
@@ -80,18 +113,19 @@ let icons = [
     
   }
 
+  .clipBackground {
+    clip-path: view-box;
+  }
+
   .wrapper {
     max-inline-size: 1125px;
     margin: 0 auto;
-    animation: reveal linear both;
-    animation-timeline: view(block);
-    animation-range: cover 10%;
   }
 
   .reveal{
     animation: reveal linear both;
     animation-timeline: view(block);
-    animation-range: cover 10%;   
+    animation-range: entry 10%;   
   }
 
   .changeW {
