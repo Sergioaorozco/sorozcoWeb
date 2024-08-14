@@ -20,7 +20,7 @@ let Tools = [
         <h2 class="text-slate-600 text-4xl reveal">Tools</h2>
         <ul class="mt-5 flex flex-row flex-wrap md:justify-center gap-2 z-10">
           {Tools.map(icon => (
-            <li class:list={icon.class} class="border border-slate-300 bg-white shadow-sm rounded-md px-3 py-2 flex gap-x-2 flex-grow flex-col md:justify-evenly md:size-36 md:aspect-square justify-center items-center md:revealTools">
+            <li class:list={icon.class} class="border border-slate-300 bg-white shadow-sm rounded-md px-3 py-2 flex gap-x-2 flex-grow flex-col md:justify-evenly md:size-36 md:aspect-square justify-center items-center md:revealTools hover:scale-110 transition-transform duration-200">
               <img width="56px" class="size-14" src={icon.url} alt={`image of the ${icon.name} logo`}>
               <p class="font-semibold text-slate-500">{icon.name}</p>
             </li>
