@@ -13,15 +13,13 @@ let Title = [
 ---
 
 <section
-  class="min-h-screen w-full flex flex-col gap-y-6 justify-center items-center bg-stone-900 p-2 changeW clipBackground relative"
+  class="min-h-screen flex flex-col gap-y-6 justify-center items-center bg-stone-900 p-2 changeW clipBackground relative"
   data-background="dark"
 >
   <div class="text-white px-10 w-full max-w-screen-lg mx-auto">
     <SorozcoMain />
+    <p class="text-white text-3xl font-semibold italic md:hidden">Frontend Developer</p>
   </div>
-  <p class="text-white text-3xl font-semibold italic md:hidden">
-    Frontend Developer
-  </p>
   <main class="py-3 md:flex justify-center items-center self-end gap-x-6 marqueeSection w-full px-6 max-w-screen-lg overflow-x-clip mx-auto hidden">
     <ul class="flex gap-x-6 items-center text-white font-bold text-xl md:text-5xl will-change-transform italic">
       {
@@ -40,7 +38,7 @@ let Title = [
       }
     </ul>
   </main>
-  <div class="w-full absolute bottom-0 mx-auto py-9 bg-black/20">
+  <div class="w-full mx-auto py-9 absolute bottom-0 bg-black/20">
     <div class="flex flex-col md:flex-row gap-2 items-center justify-center md:justify-between w-10/12 mx-auto">
       <div class="flex gap-x-2 text-white">
         <ul class="flex items-center justify-center">
