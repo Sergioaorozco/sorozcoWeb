@@ -1,0 +1,31 @@
+---
+let Tools = [
+  {name:'Astro', url:"/Tools/Astrologo.svg", class:"" },
+  {name:'Pinia', url:"/Tools/PiniaLogo.svg", class:"" },
+  {name:'Firebase', url:"/Tools/Firebase.svg" , class:""},
+  {name:'VueJs', url:"/Tools/VueLogo.svg", class:"" },
+  {name:'Git', url:"/Tools/GitLogo.svg", class:""},
+  {name:'Tailwind', url:"/Tools/TailwindLogo", class:"" },
+  {name:'Figma', url:"/Tools/Figma.svg", class:"" },
+]
+---
+
+<section class="min-h-screen max-w-screen bg-slate-200 py-8 md:py-16 px-6 pb-5 wrapper">
+    <div class="flex flex-col gap-y-8">
+      <div class="lg:px-0 text-slate-600 reveal">
+        <h2 class="text-slate-600 text-6xl">About Me</h2>
+        <p class="mt-5 text-2xl md:text-3xl leading-tight text-pretty">Mid-level frontend developer crafting user-friendly, engaging experiences with VueJs and Astro. Proficient in agile methodologies (SAFe) and teamwork, I bring a strong work ethic and passion for excellence to help your team achieve its goals.</p>
+      </div>
+      <div class="reveal">
+        <h2 class="text-slate-600 text-4xl reveal">Tools</h2>
+        <ul class="mt-5 flex flex-row flex-wrap md:justify-center gap-2 z-10">
+          {Tools.map(icon => (
+            <li class:list={icon.class} class="border border-slate-300 bg-white shadow-sm rounded-md px-3 py-2 flex gap-x-2 flex-grow flex-col md:justify-evenly md:size-36 md:aspect-square justify-center items-center md:revealTools">
+              <img width="56px" class="size-14" src={icon.url} alt={`image of the ${icon.name} logo`}>
+              <p class="font-semibold text-slate-500">{icon.name}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>

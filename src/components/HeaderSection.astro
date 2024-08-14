@@ -1,0 +1,52 @@
+---
+import SorozcoMain from "../assets/icons/SorozcoType.astro"
+let Title = [
+  {name:'FrontEnd Developer', },
+  {name:'•'},
+  {name:'Graphic Designer'},
+  {name:'•'},
+  {name:'FrontEnd Developer', },
+  {name:'•'},
+  {name:'Graphic Designer'},
+  {name:'•'},
+]
+---
+
+<section
+class="min-h-screen w-ful flex flex-col gap-y-6 justify-center items-center bg-stone-900 p-2 changeW clipBackground"
+data-background="dark"
+>
+<div class="text-white px-10 w-full max-w-screen-lg mx-auto">
+<SorozcoMain />
+</div>
+<p class="text-white text-3xl font-semibold italic md:hidden">Frontend Developer</p>
+<main
+class="py-3 md:flex justify-center items-center self-end gap-x-6 marqueeSection w-full px-6 max-w-screen-lg overflow-x-clip mx-auto hidden"
+>
+<ul class="flex gap-x-6 items-center text-white font-bold text-xl md:text-5xl will-change-transform italic">
+  { Title.map(title => (
+    <li class="marqueeInitial text-nowrap animate-ping">{title.name}</li>
+  ))}
+</ul>
+<ul class="flex gap-x-6 items-center text-white font-bold text-xl md:text-5xl will-change-transform italic md:relative">
+  { Title.map(title => (
+    <li class="marqueeInitial text-nowrap animate-ping">{title.name}</li>
+  ))}
+</ul>
+</main>
+<div class="w-full absolute bottom-0 mx-auto py-9 bg-black/20">
+<div class="flex flex-col md:flex-row gap-2 items-center justify-center md:justify-between w-10/12 mx-auto">
+  <div class="flex gap-x-2 text-white">
+    <div class="flex items-center justify-center">
+      <span class="size-3 bg-green-500 border-2 border-green-400 rounded-full absolute"></span>
+      <span class="size-5 bg-green-500 rounded-full animate-ping"></span>
+    </div>
+    <p class="text-lg font-bold">Working at: Sproutloud</p>
+  </div>
+  <div class="flex gap-x-2 items-center text-white">
+    <img src="/ColombianFlag.svg" class="size-7" alt="Image of the colombian flag">
+    <p>Based in Medellín, Colombia</p>
+  </div>
+</div>
+</div>
+</section>
