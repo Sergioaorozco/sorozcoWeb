@@ -67,4 +67,78 @@ import MainIcon from "../assets/icons/MainIcon.astro";
     font-weight: 300;
     font-style: normal;
   }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(10em);
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+  @keyframes changeWidth {
+    0% {
+      margin-inline: 0em;
+    }
+    20%,100% {
+      margin-inline: 1em;
+      border-bottom-left-radius: 3em;
+      border-bottom-right-radius: 3em;
+      @apply bg-blue-900 duration-700;
+    }
+  }
+
+  @keyframes marqueeInitial {
+    0% {
+      transform: translateX(-1.2rem);
+    }
+    100% {
+      transform: translateX(-940px);
+    }
+    
+  }
+
+  @keyframes revealTools {
+      0%, 80%, 100% {transform: translateY(0em);}
+      40% {transform: translateY(-6em);}
+      60% {transform: translateY(-1em);}
+    }
+  
+  
+  .revealTools {
+    animation: revealTools ease normal;
+    animation-timeline: view();
+    animation-range: entry 10% contain 50%;
+  }
+
+  .clipBackground {
+    clip-path: view-box;
+  }
+
+  .wrapper {
+    max-inline-size: 1500px;
+    margin: 0 auto;
+  }
+
+  .reveal{
+    animation: reveal ease-in-out both;
+    animation-timeline: view(block);
+    animation-range: entry 10% contain 30%;
+  }
+
+  .changeW {
+    animation: changeWidth linear both;
+    animation-timeline: view(block);
+    animation-range: exit 0% cover 100%;
+  }
+
+  .marqueeInitial {
+    animation: marqueeInitial 10s linear infinite;
+  }
+  .marqueeSection {
+    mask-image: linear-gradient(to left, transparent, black 80%, transparent);
+  }
+
 </style>
