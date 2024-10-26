@@ -1,7 +1,7 @@
 ---
 import SorozcoMain from "../assets/icons/SorozcoType.astro";
-import Linkedin from "../assets/Linkedin.astro"
-import Github from "../assets/Github.astro"
+import Linkedin from "../assets/Linkedin.astro";
+import Github from "../assets/Github.astro";
 
 let Social = [
   {
@@ -17,35 +17,27 @@ let Social = [
 ];
 ---
 
-<main
+<section
   class="min-h-svh flex flex-col gap-y-6 justify-center items-center bg-stone-900 p-2 changeW clipBackground relative"
   data-background="dark"
 >
-  <div class="text-white px-10 w-9/12 max-w-screen-lg mx-auto">
+  <div class="text-white px-10 w-full max-w-screen-lg mx-auto">
     <SorozcoMain />
-    <div class="py-3 w-full flex flex-col md:flex-row justify-between items-center gap-2">
-      <p class="font-bold md:text-5xl text-white">Frontend Developer</p>
-      <ul class="flex items-center gap-x-6">
-        {
-          Social.map(({ url, component:Component }) => (
-            <li>
-              <a class="text-white size-7 text-white hover:text-yellow-400 duration-300 transition-colors" href={url} target="_blank" rel="noopener noreferrer">
-                <Component/>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+    <div
+      class="py-3 w-full flex flex-col md:flex-row justify-center items-center gap-2"
+    >
+      <p class="font-bold md:text-5xl text-white italic">Frontend Developer</p>
     </div>
   </div>
   <div class="w-full mx-auto py-9 absolute bottom-0 bg-black/20">
     <div
       class="flex flex-col md:flex-row gap-2 items-center justify-center md:justify-between w-10/12 mx-auto"
     >
+      <!-- Company Information -->
       <a
         href="https://sproutloud.com"
         target="_blank"
-        class="flex gap-x-2 text-white hover:underline"
+        class="flex gap-x-2 text-white hover:underline order-1 md:order-none"
       >
         <ul class="flex items-center justify-center">
           <li
@@ -56,6 +48,24 @@ let Social = [
         </ul>
         <p class="text-lg font-bold">Working at: Ansira</p>
       </a>
+      <!-- Social Icons -->
+      <ul class="flex items-center gap-x-6">
+        {
+          Social.map(({ url, component: Component }) => (
+            <li>
+              <a
+                class="text-white size-7 hover:text-yellow-400 duration-300 transition-colors"
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Component />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <!-- Location -->
       <div class="flex gap-x-2 items-center text-white">
         <img
           src="/ColombianFlag.svg"
@@ -66,4 +76,4 @@ let Social = [
       </div>
     </div>
   </div>
-</main>
+</section>
