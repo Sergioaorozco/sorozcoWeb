@@ -1,34 +1,55 @@
 ---
 import SorozcoMain from "../assets/icons/SorozcoType.astro";
-let Title = [
-  { name: "FrontEnd Developer" },
-  { name: "•" },
-  { name: "UI Designer" },
+
+let Social = [
+  {
+    name: "Github",
+    url: "https://www.linkedin.com/in/sergiorozco/",
+    img: "/Github.svg",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://github.com/Sergioaorozco",
+    img: "/linkedin.svg",
+  },
 ];
 ---
 
-<section
+<main
   class="min-h-svh flex flex-col gap-y-6 justify-center items-center bg-stone-900 p-2 changeW clipBackground relative"
   data-background="dark"
 >
-  <div class="text-white px-10 w-full max-w-screen-lg mx-auto">
+  <div class="text-white px-10 w-9/12 max-w-screen-lg mx-auto">
     <SorozcoMain />
-    <p class="text-white mx-auto text-center text-2xl font-semibold italic md:hidden">Frontend Developer</p>
+    <div class="py-3 w-full flex flex-col md:flex-row justify-between items-center gap-2">
+      <p class="font-bold md:text-5xl text-white">Frontend Developer</p>
+      <ul class="flex gap-x-6">
+        {
+          Social.map(({ url, img, name }) => (
+            <li class="text-nowrap">
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                <img class="size-10" src={img} alt={`${name} Icon to Follow`} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
-  <main class="py-3 md:flex justify-center items-center self-end gap-x-6 marqueeSection w-full px-6 max-w-screen-lg overflow-x-clip mx-auto hidden">
-    <ul class="flex gap-x-6 items-center text-white font-bold text-xl md:text-5xl will-change-transform italic">
-      {
-        Title.map((title) => (
-          <li class="text-nowrap">{title.name}</li>
-        ))
-      }
-    </ul>
-  </main>
   <div class="w-full mx-auto py-9 absolute bottom-0 bg-black/20">
-    <div class="flex flex-col md:flex-row gap-2 items-center justify-center md:justify-between w-10/12 mx-auto">
-      <a href="https://sproutloud.com" target="_blank" class="flex gap-x-2 text-white hover:underline">
+    <div
+      class="flex flex-col md:flex-row gap-2 items-center justify-center md:justify-between w-10/12 mx-auto"
+    >
+      <a
+        href="https://sproutloud.com"
+        target="_blank"
+        class="flex gap-x-2 text-white hover:underline"
+      >
         <ul class="flex items-center justify-center">
-          <li class="size-3 bg-green-500 border-2 border-green-400 rounded-full absolute"></li>
+          <li
+            class="size-3 bg-green-500 border-2 border-green-400 rounded-full absolute"
+          >
+          </li>
           <li class="size-5 bg-green-500 rounded-full animate-ping"></li>
         </ul>
         <p class="text-lg font-bold">Working at: Ansira</p>
@@ -43,4 +64,4 @@ let Title = [
       </div>
     </div>
   </div>
-</section>
+</main>
