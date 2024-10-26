@@ -1,6 +1,16 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import MainIcon from "../assets/icons/MainIcon.astro";
+
+interface Props {
+  title:string,
+  description: string
+}
+
+const {title, description} = Astro.props
+
 ---
+
 <script>
   const $navTarget = document.querySelector("#navSection") as HTMLElement;
   const $$sections = document.querySelectorAll("section[data-background='dark']");
@@ -30,8 +40,10 @@ import MainIcon from "../assets/icons/MainIcon.astro";
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="description" content={description}>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
-    <title>Sergio Orozco - Frontend Developer</title>
+    <title>{title}</title>
+    <ViewTransitions></ViewTransitions>
   </head>
   <body class="bg-slate-200">
     <!-- Menu Layout -->
@@ -90,16 +102,6 @@ import MainIcon from "../assets/icons/MainIcon.astro";
     }
   }
 
-  @keyframes marqueeInitial {
-    0% {
-      transform: translateX(-1.2rem);
-    }
-    100% {
-      transform: translateX(-940px);
-    }
-    
-  }
-
   @keyframes revealTools {
       0%, 80%, 100% {transform: translateY(0em);}
       40% {transform: translateY(-6em);}
@@ -118,7 +120,7 @@ import MainIcon from "../assets/icons/MainIcon.astro";
   }
 
   .wrapper {
-    max-inline-size: 1500px;
+    max-inline-size: 1100px;
     margin: 0 auto;
   }
 
