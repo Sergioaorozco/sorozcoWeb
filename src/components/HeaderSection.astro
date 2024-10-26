@@ -1,16 +1,18 @@
 ---
 import SorozcoMain from "../assets/icons/SorozcoType.astro";
+import Linkedin from "../assets/Linkedin.astro"
+import Github from "../assets/Github.astro"
 
 let Social = [
   {
     name: "Github",
     url: "https://www.linkedin.com/in/sergiorozco/",
-    img: "/Github.svg",
+    component: Github,
   },
   {
     name: "LinkedIn",
     url: "https://github.com/Sergioaorozco",
-    img: "/linkedin.svg",
+    component: Linkedin,
   },
 ];
 ---
@@ -23,12 +25,12 @@ let Social = [
     <SorozcoMain />
     <div class="py-3 w-full flex flex-col md:flex-row justify-between items-center gap-2">
       <p class="font-bold md:text-5xl text-white">Frontend Developer</p>
-      <ul class="flex gap-x-6">
+      <ul class="flex items-center gap-x-6">
         {
-          Social.map(({ url, img, name }) => (
-            <li class="text-nowrap">
-              <a href={url} target="_blank" rel="noopener noreferrer">
-                <img class="size-10" src={img} alt={`${name} Icon to Follow`} />
+          Social.map(({ url, component:Component }) => (
+            <li>
+              <a class="text-white size-7 text-white hover:text-yellow-400 duration-300 transition-colors" href={url} target="_blank" rel="noopener noreferrer">
+                <Component/>
               </a>
             </li>
           ))
