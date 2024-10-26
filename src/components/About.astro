@@ -8,7 +8,7 @@ let Tools = [
   { name: "VueJs", url: "/Tools/VueLogo.svg"},
   { name: "Git", url: "/Tools/GitLogo.svg"},
   { name: "Tailwind", url: "/Tools/TailwindLogo.svg"},
-  { name: "Figma", url: "/Tools/Figma.svg"},
+  // { name: "Figma", url: "/Tools/Figma.svg"},
 ];
 
 ---
@@ -29,11 +29,11 @@ let Tools = [
     </div>
     <div class="reveal md:w-1/2">
       <h2 class="text-slate-600 text-4xl mb-5">Tools</h2>
-      <ul class="flex flex-row flex-wrap gap-2 z-10">
+      <ul class="grid grid-cols-3 gap-3">
         {
           Tools.map(({name, url}) => (
             <li
-              class="border border-slate-300 bg-white shadow-sm rounded-md p-2 flex gap-x-2 flex-col size-24 md:size-28 md:aspect-square justify-center items-center md:revealTools hover:scale-105 hover:z-10 transition-transform duration-200"
+              class="border border-slate-300 bg-white shadow-sm rounded-md p-4 flex gap-x-2 flex-col w-full h-24 md:h-28 justify-center items-center md:revealTools hover:scale-105 hover:z-10 transition-transform duration-200"
             >
               <Image
                 width="50"
