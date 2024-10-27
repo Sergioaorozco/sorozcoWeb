@@ -23,7 +23,7 @@ let Social = [
   class="min-h-svh flex flex-col gap-y-6 justify-center items-center bg-stone-900 p-2 changeW clipBackground relative"
   data-background="dark"
 >
-  <article class="text-white px-10 w-full max-w-screen-lg mx-auto">
+  <article class="text-white px-10 w-full max-w-screen-lg mx-auto animate-fade-up animate-duration-1000">
     <SorozcoMain />
     <span
       class="py-3 w-full flex flex-col md:flex-row justify-center items-center gap-2"
@@ -56,9 +56,9 @@ let Social = [
       <ul class="flex items-center gap-x-6">
         {
           Social.map(({ name, url, component: Component }) => (
-            <li>
+            <li class="size-10">
               <a
-                class="text-white size-7 hover:text-yellow-400 duration-300 transition-colors"
+                class="text-white hover:text-yellow-400 duration-300 transition-colors"
                 href={url}
                 aria-label={`${name} social media`}
                 target="_blank"
@@ -85,3 +85,23 @@ let Social = [
     </div>
   </div>
 </section>
+
+
+<style>
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(2rem)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+  .animate-fade-up {
+    animation: fade-up 3s both;
+  }
+</style>
