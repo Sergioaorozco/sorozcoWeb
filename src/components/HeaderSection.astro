@@ -23,14 +23,16 @@ let Social = [
   class="min-h-svh flex flex-col gap-y-6 justify-center items-center bg-stone-900 p-2 changeW clipBackground relative"
   data-background="dark"
 >
-  <div class="text-white px-10 w-full max-w-screen-lg mx-auto">
+  <article class="text-white px-10 w-full max-w-screen-lg mx-auto">
     <SorozcoMain />
-    <div
+    <span
       class="py-3 w-full flex flex-col md:flex-row justify-center items-center gap-2"
     >
-      <p class="font-bold text-lg md:text-5xl text-white italic">Frontend Developer</p>
-    </div>
-  </div>
+      <p class="font-bold text-lg md:text-5xl text-white italic">
+        Frontend Developer
+      </p>
+    </span>
+  </article>
   <div class="w-full mx-auto py-9 absolute bottom-0 bg-black/20">
     <div
       class="flex flex-col md:flex-row gap-2 items-center justify-center md:justify-between w-10/12 mx-auto"
@@ -53,7 +55,7 @@ let Social = [
       <!-- Social Icons -->
       <ul class="flex items-center gap-x-6">
         {
-          Social.map(({ name,url, component: Component }) => (
+          Social.map(({ name, url, component: Component }) => (
             <li>
               <a
                 class="text-white size-7 hover:text-yellow-400 duration-300 transition-colors"
