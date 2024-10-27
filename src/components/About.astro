@@ -2,39 +2,36 @@
 import { Image } from "astro:assets";
 
 let Tools = [
-  { name: "Astro", url: "/Tools/Astrologo.svg"},
-  { name: "Pinia", url: "/Tools/PiniaLogo.svg"},
-  { name: "Firebase", url: "/Tools/Firebase.svg"},
-  { name: "VueJs", url: "/Tools/VueLogo.svg"},
-  { name: "Git", url: "/Tools/GitLogo.svg"},
-  { name: "Tailwind", url: "/Tools/TailwindLogo.svg"},
+  { name: "Astro", url: "/Tools/Astrologo.svg" },
+  { name: "Pinia", url: "/Tools/PiniaLogo.svg" },
+  { name: "Firebase", url: "/Tools/Firebase.svg" },
+  { name: "VueJs", url: "/Tools/VueLogo.svg" },
+  { name: "Git", url: "/Tools/GitLogo.svg" },
+  { name: "Tailwind", url: "/Tools/TailwindLogo.svg" },
   // { name: "Figma", url: "/Tools/Figma.svg"},
 ];
-
 ---
 
-<section class="bg-slate-200 py-8 md:py-16 wrapper">
-  <div class="flex flex-col md:justify-between md:flex-row gap-8">
-    <div class="lg:px-0 text-slate-600 reveal md:w-1/2">
-      <h2 class="text-slate-600 text-5xl">About Me</h2>
-      <p class="mt-5 text-2xl md:text-3xl leading-tight text-pretty">
+<main class="bg-slate-200 py-8 md:py-16 wrapper">
+  <section class="flex flex-col md:justify-between md:flex-row gap-8">
+    <article class="lg:px-0 text-slate-600 reveal md:w-1/2">
+      <h2 class="text-slate-600 text-4xl">About Me</h2>
+      <p class="mt-5 text-2xl md:text-2xl leading-tight text-pretty">
         Mid-level frontend developer crafting user-friendly, engaging
         experiences with VueJs and Astro.
       </p>
-      <p class="mt-5 text-2xl md:text-3xl leading-tight text-pretty">
+      <p class="mt-5 text-2xl md:text-2xl leading-tight text-pretty">
         Proficient in agile methodologies (SAFe) and teamwork, I bring a strong
         work ethic and passion for excellence to help your team achieve its
         goals.
       </p>
-    </div>
-    <div class="reveal md:w-1/2">
+    </article>
+    <article class="reveal md:w-1/2">
       <h2 class="text-slate-600 text-4xl mb-5">Tools</h2>
       <ul class="grid grid-cols-3 gap-3">
         {
-          Tools.map(({name, url}) => (
-            <li
-              class="border border-slate-300 bg-white shadow-sm rounded-md p-4 flex gap-x-2 flex-col w-full h-24 md:h-28 justify-center items-center md:revealTools hover:scale-105 hover:z-10 transition-transform duration-200"
-            >
+          Tools.map(({ name, url }) => (
+            <li class="border border-slate-300 bg-white shadow-sm rounded-md p-4 flex gap-x-2 flex-col w-full h-24 md:h-28 justify-center items-center md:revealTools hover:scale-105 hover:z-10 transition-transform duration-200">
               <Image
                 width="50"
                 height="50"
@@ -48,6 +45,6 @@ let Tools = [
           ))
         }
       </ul>
-    </div>
-  </div>
-</section>
+    </article>
+  </section>
+</main>

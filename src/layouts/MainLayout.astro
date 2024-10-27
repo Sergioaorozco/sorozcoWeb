@@ -23,7 +23,7 @@ const {title, description} = Astro.props
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      !entry.isIntersecting ? $navTarget.classList.add("isDark") : $navTarget.classList.remove('isDark')
+      !entry.isIntersecting ? $navTarget.classList.add("isDark") : $navTarget.classList.remove('isDark');
     });
   }, intersectionOptions);
 
@@ -106,19 +106,6 @@ const {title, description} = Astro.props
     }
   }
 
-  @keyframes revealTools {
-      0%, 80%, 100% {transform: translateY(0em);}
-      40% {transform: translateY(-6em);}
-      60% {transform: translateY(-1em);}
-    }
-  
-  
-  .revealTools {
-    animation: revealTools ease normal;
-    animation-timeline: view();
-    animation-range: entry 10% contain 50%;
-  }
-
   .clipBackground {
     clip-path: view-box;
   }
@@ -140,9 +127,6 @@ const {title, description} = Astro.props
     animation-range: exit 0% cover 100%;
   }
 
-  .marqueeInitial {
-    animation: marqueeInitial 10s linear infinite;
-  }
   .marqueeSection {
     mask-image: linear-gradient(to left, transparent, black 80%, transparent);
   }
