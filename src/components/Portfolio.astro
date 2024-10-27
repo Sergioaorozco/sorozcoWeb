@@ -4,42 +4,71 @@ import GithubIcon from "../assets/Github.astro";
 import LinkIcon from "../assets/icons/LinkIcon.astro";
 
 const highlighted = [
-  { name: "VueShop", url: "/portfolio", imageMobile: "/images/defaultMobile.jpg", imageDesktop: "/images/default.jpg"},
-  { name: "Game", url: "/portfolio", imageMobile: "/images/defaultMobile.jpg", imageDesktop: "/images/default.jpg"},
-  { name: "AI Generator", url: "/portfolio", imageMobile: "/images/defaultMobile.jpg", imageDesktop: "/images/default.jpg"},
+  {
+    name: "VueShop",
+    url: "https://generator-ai-gold.vercel.app/",
+    gitUrl: "https://github.com/Sergioaorozco/generatorAI",
+    imageMobile: "/images/defaultMobile.jpg",
+    imageDesktop: "/images/default.jpg",
+  },
+  {
+    name: "Game",
+    url: "https://generator-ai-gold.vercel.app/",
+    gitUrl: "https://github.com/Sergioaorozco/generatorAI",
+    imageMobile: "/images/defaultMobile.jpg",
+    imageDesktop: "/images/default.jpg",
+  },
+  {
+    name: "AI Generator",
+    url: "https://generator-ai-gold.vercel.app/",
+    gitUrl: "https://github.com/Sergioaorozco/generatorAI",
+    imageMobile: "/images/defaultMobile.jpg",
+    imageDesktop: "/images/default.jpg",
+  },
 ];
-
 ---
 
- <section class="py-10 wrapper reveal">
-    <h2 class="text-slate-600 text-4xl">Portfolio</h2>
-    <article class="">
-      <ul class="grid grid-cols-1 md:grid-cols-3 lg:flex-row gap-3 w-full items-center mt-5">
-        {
-          highlighted.map(({ name, url, imageDesktop, imageMobile }) => (
-            <li class="border flex-col items-center flex-grow border-slate-400 rounded-md overflow-clip group flex-1 w-full">
-              <a target="_blank" href={url}>
-                <div class="flex justify-between items-center py-4 border-b border-slate-400 px-3 flex-1 bg-slate-300 group-hover:bg-white group-hover:transition-colors duration-300">
-                  <h3 class="font-semibold text-slate-600">{name}</h3>
-                  <ul class="flex gap-x-2 items-center">
-                    <li class="text-slate-600 text-sm size-7 hover:text-blue-500 transition-all"><GithubIcon/></li>
-                    <li class="text-slate-600 text-sm size-7 duration-300 hover:text-blue-500 transition-all"><a href={url} target="_blank" rel="noopener noreferrer"><LinkIcon/></a></li>
-                  </ul>
-                </div>
-                <div class="overflow-clip">
-                  {/* Mobile Images 700 x 300 */}
-                  {/* Desktop Images 700 x 700 */}
-                  <picture class="w-full object-fill aspect-video md:aspect-square">
-                    <source srcset={imageDesktop} media="(min-width: 768px)" />
-                    <Image src={imageMobile} width="700" height="300" loading="lazy" alt={`visual representation of the ${name} project`} class={"group-hover:scale-105 group-hover:transition-all duration-500"} />
-                  </picture>
-                </div>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </article>
-  </section>
-<style>
-</style>
+<section class="py-10 wrapper reveal">
+  <h2 class="text-slate-600 text-4xl">Portfolio</h2>
+  <ul
+    class="grid grid-cols-1 md:grid-cols-3 lg:flex-row gap-3 w-full items-center mt-5"
+  >
+    {
+      highlighted.map(({ name, url, imageDesktop, imageMobile, gitUrl }) => (
+        <li class="border flex-col items-center flex-grow border-slate-400 rounded-md overflow-clip group flex-1 w-full">
+          <article>
+            <div class="flex justify-between items-center py-4 border-b border-slate-400 px-3 flex-1 bg-slate-300 group-hover:bg-white group-hover:transition-colors duration-300">
+              <h3 class="font-semibold text-slate-600">{name}</h3>
+              <span class="flex gap-x-2 items-center text-slate-700">
+                <a href={gitUrl} target="_blank" rel="noopener noreferrer" class="size-7">
+                  <GithubIcon />
+                </a>
+                <a href={url} target="_blank" rel="noopener noreferrer" class="size-7"> 
+                  <LinkIcon />
+                </a>
+              </span>
+            </div>
+            <div class="overflow-clip">
+              {/* Mobile Images 700 x 300 */}
+              {/* Desktop Images 700 x 700 */}
+              <picture class="w-full object-fill aspect-video md:aspect-square">
+                <source srcset={imageDesktop} media="(min-width: 768px)" />
+                <Image
+                  src={imageMobile}
+                  width="700"
+                  height="300"
+                  loading="lazy"
+                  alt={`visual representation of the ${name} project`}
+                  class={
+                    "group-hover:scale-105 group-hover:transition-all duration-500"
+                  }
+                />
+              </picture>
+            </div>
+          </article>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+<style></style>
