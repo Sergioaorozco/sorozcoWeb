@@ -13,7 +13,7 @@ const highlighted = [
   <article class="px-6 md:px-0 py-10 wrapper">
     <h2 class="text-slate-600 text-5xl">Portfolio</h2>
     <section class="">
-      <ul class="grid grid-cols-3 lg:flex-row gap-3 w-full items-center mt-5">
+      <ul class="grid grid-cols-1 md:grid-cols-3 lg:flex-row gap-3 w-full items-center mt-5">
         {
           highlighted.map(({ name, url, image }) => (
             <li class="border flex-col items-center flex-grow border-slate-400 rounded-md overflow-clip group flex-1 w-full">
@@ -27,7 +27,7 @@ const highlighted = [
                   width="455"
                   height="300"
                   loading="lazy"
-                  class="w-full object-cover aspect-[9/12] group-hover:scale-105 group-hover:transition-all duration-500"
+                  class="w-full object-cover aspect-video md:aspect-[9/12] group-hover:scale-105 group-hover:transition-all duration-500"
                   src={image}
                   alt={`visual representation of the ${name} project`}
                 />
