@@ -11,25 +11,6 @@ const {title, description} = Astro.props
 
 ---
 
-<script>
-  const $navTarget = document.querySelector("#navSection") as HTMLElement;
-  const $$sections = document.querySelectorAll("section[data-background='dark']");
-
-  const intersectionOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.1,
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      !entry.isIntersecting ? $navTarget.classList.add("isDark") : $navTarget.classList.remove('isDark');
-    });
-  }, intersectionOptions);
-
-  $$sections.forEach((darkSection) => observer.observe(darkSection));
-</script>
-
 
 
 <html lang="en">
@@ -45,13 +26,13 @@ const {title, description} = Astro.props
   </head>
   <body class="bg-slate-200">
     <!-- Menu Layout -->
-    <nav id="navSection" class="px-6 py-2 z-10 fixed top-0 transition-colors duration-300 text-white right-0 w-full flex justify-between items-center">
+    <nav id="navSection" class="px-6 py-2 z-10 absolute top-0 transition-colors duration-300 text-white right-0 w-full flex justify-between items-center">
       <a href="/" class="size-12 p-2 rounded-full" aria-label="main-isotype sorozco">
         <MainIcon />
       </a>
       <ul class="navLinks flex text-xl font-semibold normal-case">
-        <li><a class="hover:bg-black/40 rounded-md py-3 px-4" href="/">About</a></li>
-        <li><a class="hover:bg-black/40 rounded-md py-3 px-4" href="/portfolio">Portfolio</a></li>
+        <li><a class="hover:bg-black/40 rounded-md py-3 px-4" href="#linkAbout">About</a></li>
+        <li><a class="hover:bg-black/40 rounded-md py-3 px-4" href="#linkPortfolio">Portfolio</a></li>
       </ul>
     </nav>
     <slot></slot>
@@ -71,6 +52,10 @@ const {title, description} = Astro.props
   body {
     font-family: "Barlow", sans-serif;
   }
+  section {
+    scroll-behavior: smooth;
+  }
+
   .handText {
     font-family: "Playwrite NO", cursive;
     font-optical-sizing: auto;

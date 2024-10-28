@@ -17,7 +17,7 @@ let Tools = [
 <main class="bg-slate-200 py-8 md:py-12 wrapper">
   <section class="flex flex-col md:justify-between md:flex-row gap-8">
     <article class="lg:px-0 text-slate-600 reveal md:w-1/2">
-      <h2 class="text-slate-600 text-4xl">About Me</h2>
+      <h2 class="text-slate-600 text-3xl" id="linkAbout">About Me</h2>
       <p class="mt-5 text-lg md:text-xl leading-tight text-pretty">
         Mid-level frontend developer crafting user-friendly, engaging
         experiences with VueJs and Astro.
@@ -30,7 +30,7 @@ let Tools = [
       <Resume/>
     </article>
     <article class="reveal md:w-1/2">
-      <h2 class="text-slate-600 text-4xl mb-5">Tools</h2>
+      <h2 class="text-slate-600 text-3xl mb-5">Tools</h2>
       <ul class="grid grid-cols-3 gap-3">
         {
           Tools.map(({ name, url }) => (

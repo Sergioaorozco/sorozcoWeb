@@ -24,7 +24,7 @@ const highlighted = [
 ---
 
 <section class="py-5 wrapper reveal">
-  <h2 class="text-slate-600 text-4xl">Portfolio</h2>
+  <h2 class="text-slate-600 text-3xl" id="linkPortfolio">Portfolio</h2>
   <ul
     class="grid grid-cols-1 md:grid-cols-3 lg:flex-row gap-3 w-full items-center mt-5"
   >
@@ -44,9 +44,7 @@ const highlighted = [
               </span>
             </div>
             <div class="overflow-clip">
-              <a href={url} target="_blank" rel="noopener noreferrer"></a>
-              {/* Mobile Images 700 x 300 */}
-              {/* Desktop Images 700 x 700 */}
+              <a href={url} target="_blank" rel="noopener noreferrer">
                 <Image
                   src={imageProject}
                   width="700"
@@ -57,6 +55,7 @@ const highlighted = [
                     "group-hover:scale-105 group-hover:transition-all duration-500"
                   }
                 />
+              </a>
             </div>
           </article>
         </li>
