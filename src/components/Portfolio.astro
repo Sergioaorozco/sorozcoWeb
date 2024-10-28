@@ -8,22 +8,19 @@ const highlighted = [
     name: "VueShop",
     url: "https://generator-ai-gold.vercel.app/",
     gitUrl: "https://github.com/Sergioaorozco/generatorAI",
-    imageMobile: "/images/defaultMobile.jpg",
-    imageDesktop: "/images/default.jpg",
+    imageProject: "/images/default.jpg",
   },
   {
     name: "Game",
     url: "https://generator-ai-gold.vercel.app/",
     gitUrl: "https://github.com/Sergioaorozco/generatorAI",
-    imageMobile: "/images/defaultMobile.jpg",
-    imageDesktop: "/images/default.jpg",
+    imageProject: "/images/default.jpg",
   },
   {
     name: "AI Generator",
     url: "https://generator-ai-gold.vercel.app/",
     gitUrl: "https://github.com/Sergioaorozco/generatorAI",
-    imageMobile: "/images/defaultMobile.jpg",
-    imageDesktop: "/images/default.jpg",
+    imageProject: "/images/default.jpg",
   },
 ];
 ---
@@ -34,7 +31,7 @@ const highlighted = [
     class="grid grid-cols-1 md:grid-cols-3 lg:flex-row gap-3 w-full items-center mt-5"
   >
     {
-      highlighted.map(({ name, url, imageDesktop, imageMobile, gitUrl }) => (
+      highlighted.map(({ name, url, imageProject, gitUrl }) => (
         <li class="border flex-col items-center flex-grow border-slate-400 rounded-md overflow-clip group flex-1 w-full">
           <article>
             <div class="flex justify-between items-center py-4 border-b border-slate-400 px-3 flex-1 bg-slate-300 group-hover:bg-white group-hover:transition-colors duration-300">
@@ -51,10 +48,8 @@ const highlighted = [
             <div class="overflow-clip">
               {/* Mobile Images 700 x 300 */}
               {/* Desktop Images 700 x 700 */}
-              <picture class="w-full object-fill aspect-video md:aspect-square">
-                <source srcset={imageDesktop} media="(min-width: 768px)" />
                 <Image
-                  src={imageMobile}
+                  src={imageProject}
                   width="700"
                   height="300"
                   loading="lazy"
@@ -63,7 +58,6 @@ const highlighted = [
                     "group-hover:scale-105 group-hover:transition-all duration-500"
                   }
                 />
-              </picture>
             </div>
           </article>
         </li>
