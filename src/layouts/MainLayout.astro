@@ -31,8 +31,8 @@ const {title, description} = Astro.props
         <MainIcon />
       </a>
       <ul class="navLinks flex text-xl font-semibold normal-case">
-        <li><a class="hover:bg-black/40 rounded-md py-3 px-4" href="#linkAbout">About</a></li>
-        <li><a class="hover:bg-black/40 rounded-md py-3 px-4" href="#linkPortfolio">Portfolio</a></li>
+        <li><a class="hover:bg-black/40 rounded-md py-3 px-4 scroll-smooth" href="#linkAbout">About</a></li>
+        <li><a class="hover:bg-black/40 rounded-md py-3 px-4 scroll-smooth" href="#linkPortfolio">Portfolio</a></li>
       </ul>
     </nav>
     <slot></slot>
@@ -51,9 +51,6 @@ const {title, description} = Astro.props
    }
   body {
     font-family: "Barlow", sans-serif;
-  }
-  section {
-    scroll-behavior: smooth;
   }
 
   .handText {
