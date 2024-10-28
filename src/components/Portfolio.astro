@@ -35,16 +35,16 @@ const highlighted = [
             <div class="flex justify-between items-center py-4 border-b border-slate-400 px-3 flex-1 bg-slate-300 group-hover:bg-white group-hover:transition-colors duration-300">
               <h3 class="font-semibold text-slate-600">{name}</h3>
               <span class="flex gap-x-2 items-center text-slate-700">
-                <a href={gitUrl} target="_blank" rel="noopener noreferrer" class="text-sm py-1 px-2 rounded-md bg-slate-200 border border-slate-400 hover:bg-slate-300">
+                <a href={gitUrl} target="_blank" rel="noopener noreferrer" aria-label={`Go to the code repository of ${name}`} class="text-sm py-1 px-2 rounded-md bg-slate-200 border border-slate-400 hover:bg-slate-300">
                   Code
                 </a>
-                <a href={url} target="_blank" rel="noopener noreferrer" class="text-sm py-1 px-2 rounded-md bg-slate-200 border border-slate-400 hover:bg-slate-300"> 
+                <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`Go to the live version of ${name}`} class="text-sm py-1 px-2 rounded-md bg-slate-200 border border-slate-400 hover:bg-slate-300">
                   Live
                 </a>
               </span>
             </div>
             <div class="overflow-clip">
-              <a href={url} target="_blank" rel="noopener noreferrer">
+              <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`Go to the live version of ${name}`}>
                 <Image
                   src={imageProject}
                   width="700"
