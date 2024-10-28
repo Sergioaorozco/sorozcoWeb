@@ -1,22 +1,6 @@
 ---
 import SorozcoMain from "../assets/icons/SorozcoType.astro";
-import Linkedin from "../assets/Linkedin.astro";
-import Github from "../assets/Github.astro";
-
 import { Image } from "astro:assets";
-
-let Social = [
-  {
-    name: "Github",
-    url: "https://github.com/Sergioaorozco",
-    component: Github,
-  },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/sergiorozco/",
-    component: Linkedin,
-  },
-];
 ---
 
 <section
@@ -52,24 +36,6 @@ let Social = [
         </ul>
         <p class="text-lg font-bold">Working at: Ansira</p>
       </a>
-      <!-- Social Icons -->
-      <ul class="flex items-center gap-x-6">
-        {
-          Social.map(({ name, url, component: Component }) => (
-            <li class="size-10">
-              <a
-                class="text-white hover:text-yellow-400 duration-300 transition-colors"
-                href={url}
-                aria-label={`${name} social media`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Component />
-              </a>
-            </li>
-          ))
-        }
-      </ul>
       <!-- Location -->
       <div class="flex gap-x-2 items-center text-white">
         <Image

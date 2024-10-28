@@ -1,7 +1,5 @@
 ---
 import { Image, Picture } from "astro:assets";
-import GithubIcon from "../assets/Github.astro";
-import LinkIcon from "../assets/icons/LinkIcon.astro";
 
 const highlighted = [
   {
@@ -25,7 +23,7 @@ const highlighted = [
 ];
 ---
 
-<section class="py-10 wrapper reveal">
+<section class="py-5 wrapper reveal">
   <h2 class="text-slate-600 text-4xl">Portfolio</h2>
   <ul
     class="grid grid-cols-1 md:grid-cols-3 lg:flex-row gap-3 w-full items-center mt-5"
@@ -37,15 +35,16 @@ const highlighted = [
             <div class="flex justify-between items-center py-4 border-b border-slate-400 px-3 flex-1 bg-slate-300 group-hover:bg-white group-hover:transition-colors duration-300">
               <h3 class="font-semibold text-slate-600">{name}</h3>
               <span class="flex gap-x-2 items-center text-slate-700">
-                <a href={gitUrl} target="_blank" rel="noopener noreferrer" class="size-7">
-                  <GithubIcon />
+                <a href={gitUrl} target="_blank" rel="noopener noreferrer" class="text-sm py-1 px-2 rounded-md bg-slate-200 border border-slate-400 hover:bg-slate-300">
+                  Code
                 </a>
-                <a href={url} target="_blank" rel="noopener noreferrer" class="size-7"> 
-                  <LinkIcon />
+                <a href={url} target="_blank" rel="noopener noreferrer" class="text-sm py-1 px-2 rounded-md bg-slate-200 border border-slate-400 hover:bg-slate-300"> 
+                  Live
                 </a>
               </span>
             </div>
             <div class="overflow-clip">
+              <a href={url} target="_blank" rel="noopener noreferrer"></a>
               {/* Mobile Images 700 x 300 */}
               {/* Desktop Images 700 x 700 */}
                 <Image
